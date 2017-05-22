@@ -40,7 +40,8 @@ namespace FtpServer
             users.Add("admin", "admin");
 
             // 设置默认的主目录
-            FtpRoot = "F:/MyFtpServerRoot/";
+            FtpRoot = AppDomain.CurrentDomain.BaseDirectory ;
+            AddInfo("当前路径："+FtpRoot);
             //IPAddress[] ips = Dns.GetHostAddresses("");
             //FtpServerIp = ips[1].ToString();
             FtpServerPort = "21";

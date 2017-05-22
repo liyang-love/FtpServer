@@ -41,8 +41,8 @@ namespace FtpServer
 
             // 设置默认的主目录
             FtpRoot = "F:/MyFtpServerRoot/";
-            IPAddress[] ips = Dns.GetHostAddresses("");
-            FtpServerIp = ips[1].ToString();
+            //IPAddress[] ips = Dns.GetHostAddresses("");
+            //FtpServerIp = ips[1].ToString();
             FtpServerPort = "21";
         }
 
@@ -77,7 +77,7 @@ namespace FtpServer
         // 监听端口，处理客户端连接
         public void ListenClientConnect()
         {
-            myTcpListener = new TcpListener(IPAddress.Any, int.Parse(FtpServerPort));
+            myTcpListener = new TcpListener(IPAddress.Any, 21);
             // 开始监听传入的请求
             myTcpListener.Start();
             AddInfo("启动FTP服务成功！");
